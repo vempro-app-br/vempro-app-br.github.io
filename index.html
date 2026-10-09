@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light dark">
 <title>VemPro</title>
 <meta name="description" content="Aplicativos da VemPro.">
+<link rel="icon" href="palavra/imagens/favicon.png">
 <style>
 @font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 400; font-display: swap; src: url('fontes/AtkinsonHyperlegible-Regular.ttf') format('truetype'); }
 @font-face { font-family: 'Lora'; font-weight: 600; font-display: swap; src: url('fontes/Lora-SemiBold.ttf') format('truetype'); }
@@ -25,6 +26,8 @@ p { margin: 0 0 1rem; }
 .apps li { background: var(--cartao); border: 1px solid var(--borda); border-radius: 16px; padding: 1.25rem 1.25rem 0.25rem; }
 a { color: var(--primaria); text-decoration-thickness: 2px; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .contato { color: var(--texto2); }
+.icone-app { display: block; width: 64px; height: 64px; border-radius: 15px; margin-bottom: 0.75rem; }
+h2 a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -33,9 +36,10 @@ a { color: var(--primaria); text-decoration-thickness: 2px; text-underline-offse
 <p class="contato">Aplicativos da VemPro.</p>
 <ul class="apps">
   <li>
-    <h2>Palavra</h2>
-    <p>A palavra do dia e a Bíblia completa para ler, ouvir, buscar e compartilhar, com letra grande.</p>
-    <p><a href="palavra/privacidade/">Política de privacidade do Palavra</a></p>
+    <img class="icone-app" src="palavra/imagens/icone.png" alt="" width="64" height="64">
+    <h2><a href="palavra/">Palavra</a></h2>
+    <p>A palavra do dia e a Bíblia completa para ler, ouvir e compartilhar, com letra grande.</p>
+    <p><a href="palavra/">Conheça o Palavra</a> · <a href="palavra/privacidade/">Política de privacidade</a></p>
   </li>
 </ul>
 <p class="contato">Contato: <a href="mailto:jean.sassi.miranda@gmail.com">jean.sassi.miranda@gmail.com</a></p>

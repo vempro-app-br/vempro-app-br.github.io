@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Palavra: palavra do dia e Bíblia com letra grande</title>
+<meta name="description" content="A palavra do dia e a Bíblia completa para ler, ouvir e compartilhar. Com letra grande e sem complicação.">
+<link rel="icon" href="imagens/favicon.png">
+<link rel="canonical" href="https://vempro.app.br/palavra/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Palavra: palavra do dia e Bíblia com letra grande">
+<meta property="og:description" content="A palavra do dia e a Bíblia completa para ler, ouvir e compartilhar. Com letra grande e sem complicação.">
+<meta property="og:url" content="https://vempro.app.br/palavra/">
+<meta property="og:image" content="https://vempro.app.br/palavra/imagens/previa.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 400; font-display: swap; src: url('fontes/AtkinsonHyperlegible-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Atkinson Hyperlegible'; font-weight: 700; font-display: swap; src: url('fontes/AtkinsonHyperlegible-Bold.ttf') format('truetype'); }
+@font-face { font-family: 'Lora'; font-weight: 600; font-display: swap; src: url('fontes/Lora-SemiBold.ttf') format('truetype'); }
+/* Temas Claro e Escuro do app (src/theme/tokens.ts); o céu do topo é o mesmo nos dois, como a abertura. */
+:root {
+  --fundo: #F4F6FA; --cartao: #FFFFFF; --borda: #D5DCE8; --texto: #13233F; --texto2: #3A4864;
+  --primaria: #1F3D73; --icone-fundo: #F8E3AE; --azul-noite: #13233F; --dourado: #F2C46D;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fundo: #0D1426; --cartao: #16213A; --borda: #2A3757; --texto: #EEEAE0; --texto2: #C3CADA; --primaria: #F2C46D; --icone-fundo: #2A3350; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font: 400 1.25rem/1.6 'Atkinson Hyperlegible', system-ui, sans-serif; }
+h1, h2, h3 { font-family: Lora, Georgia, serif; font-weight: 600; line-height: 1.2; text-wrap: balance; }
+a { color: var(--primaria); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.largura { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+
+.topo { background: linear-gradient(180deg, #A8CBEB 0%, #D5E5F2 40%, #F6E2BD 78%, #F1C47F 100%); color: #13233F; }
+.heroi { display: grid; gap: 2.5rem; align-items: center; padding-block: 3rem 3.5rem; }
+.icone-app { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 10px 24px rgba(19, 35, 63, 0.25); display: block; }
+.heroi h1 { font-size: 3rem; margin: 1.25rem 0 0.5rem; color: #13233F; }
+.chamada { font-size: 1.5rem; line-height: 1.45; margin: 0 0 1.5rem; color: #13233F; max-width: 30rem; }
+.selo, .botao { display: inline-block; margin: 0; padding: 0.75rem 1.4rem; border-radius: 999px; font-weight: 700; }
+.selo { background: rgba(255, 255, 255, 0.7); color: #13233F; border: 2px solid rgba(19, 35, 63, 0.15); }
+.botao { background: #13233F; color: #FFFFFF; text-decoration: none; }
+.botao:hover, .botao:focus-visible { background: #1F3D73; }
+.miudo { margin: 1rem 0 0; color: #2E3D5A; font-size: 1.125rem; }
+.celular { margin: 0 auto; width: min(19rem, 80vw); }
+
+.tela { display: block; width: 100%; height: auto; border: 6px solid var(--azul-noite); border-radius: 28px; background: var(--azul-noite); box-shadow: 0 18px 40px rgba(19, 35, 63, 0.28); }
+
+section { padding-block: 3.5rem 0.5rem; }
+section h2 { font-size: 2rem; margin: 0 0 1.5rem; color: var(--primaria); }
+.cartoes { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.cartoes li { background: var(--cartao); border: 1px solid var(--borda); border-radius: 18px; padding: 1.4rem 1.4rem 1.1rem; }
+.cartoes h3 { font-size: 1.375rem; margin: 0.9rem 0 0.4rem; }
+.cartoes p { margin: 0; color: var(--texto2); }
+.icone-recurso { display: inline-flex; width: 52px; height: 52px; border-radius: 50%; align-items: center; justify-content: center; background: var(--icone-fundo); color: var(--primaria); }
+
+.galeria { list-style: none; margin: 0; padding: 0.5rem 0 1.5rem; display: grid; gap: 1.25rem; grid-auto-flow: column; grid-auto-columns: min(15rem, 70vw); overflow-x: auto; scroll-snap-type: x mandatory; }
+.galeria li { scroll-snap-align: start; }
+.galeria figure { margin: 0; }
+.galeria figcaption { text-align: center; margin-top: 0.75rem; font-weight: 700; }
+.dica-galeria { margin: -0.75rem 0 1rem; color: var(--texto2); }
+
+.destaque { background: var(--cartao); border: 1px solid var(--borda); border-radius: 18px; padding: 1.75rem 1.5rem; }
+.destaque h2 { margin-top: 0; }
+.destaque p { margin: 0 0 1rem; }
+.destaque p:last-child { margin-bottom: 0; }
+.credito { color: var(--texto2); }
+
+footer { margin-top: 3.5rem; border-top: 1px solid var(--borda); padding-block: 1.75rem 2.5rem; color: var(--texto2); font-size: 1.125rem; }
+footer p { margin: 0 0 0.5rem; }
+
+@media (min-width: 52rem) {
+  .heroi { grid-template-columns: 1.15fr 1fr; padding-block: 4rem 4.5rem; }
+  .heroi h1 { font-size: 3.75rem; }
+  .galeria { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); grid-auto-columns: auto; overflow: visible; }
+  .dica-galeria { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="largura heroi">
+    <div>
+      <img class="icone-app" src="imagens/icone.png" alt="" width="96" height="96">
+      <h1>Palavra</h1>
+      <p class="chamada">A palavra do dia e a Bíblia completa para ler, ouvir e compartilhar. Com letra grande e sem complicação.</p>
+      <p class="selo">Em breve no Google Play</p>
+      <p class="miudo">Grátis, sem cadastro e sem anúncios.</p>
+    </div>
+    <figure class="celular">
+      <img class="tela" src="imagens/01-hoje.webp" width="480" height="1067" alt="Tela Hoje do Palavra: Bom dia, Maria, e a palavra de hoje, Lamentações 3:22–23, com os botões Compartilhar, Ouvir e Salvar.">
+    </figure>
+  </div>
+</header>
+<main class="largura">
+  <section aria-labelledby="t-recursos">
+    <h2 id="t-recursos">O que o Palavra faz</h2>
+    <ul class="cartoes">
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>
+        <h3>Palavra do dia</h3>
+        <p>Todo dia, um versículo e uma reflexão curta para começar o dia com Deus.</p>
+      </li>
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+        <h3>A Bíblia completa, sem internet</h3>
+        <p>Os 66 livros na tradução Bíblia Livre. Busque qualquer palavra e salve os versículos favoritos.</p>
+      </li>
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+        <h3>Ouvir em voz alta</h3>
+        <p>O celular lê para você, versículo por versículo, no ritmo normal ou mais devagar.</p>
+      </li>
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span>
+        <h3>Letra do seu tamanho</h3>
+        <p>Aumente a letra até ficar confortável e escolha a aparência: Claro, Sépia ou Escuro.</p>
+      </li>
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg></span>
+        <h3>Compartilhar com a família</h3>
+        <p>Transforme o versículo numa imagem bonita e envie pelo WhatsApp.</p>
+      </li>
+      <li>
+        <span class="icone-recurso"><svg aria-hidden="true" focusable="false" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+        <h3>Lembrete e widget</h3>
+        <p>Um aviso por dia no horário que você escolher, e a palavra do dia na tela inicial do celular.</p>
+      </li>
+    </ul>
+  </section>
+  <section aria-labelledby="t-telas">
+    <h2 id="t-telas">Veja como é</h2>
+    <p class="dica-galeria">Deslize para o lado para ver mais telas.</p>
+    <ul class="galeria">
+      <li><figure>
+        <img class="tela" src="imagens/02-leitura.webp" width="480" height="1067" loading="lazy" alt="Leitura do Salmo 23, com letra grande e o número de cada versículo.">
+        <figcaption>Leitura</figcaption>
+      </figure></li>
+      <li><figure>
+        <img class="tela" src="imagens/03-ouvir.webp" width="480" height="1067" loading="lazy" alt="O Salmo 23 sendo lido em voz alta, com o versículo lido em destaque e os botões Pausar e Parar.">
+        <figcaption>Ouvir</figcaption>
+      </figure></li>
+      <li><figure>
+        <img class="tela" src="imagens/04-letra-grande.webp" width="480" height="1067" loading="lazy" alt="Painel Letra e tema, com a letra no tamanho 30 e as aparências Claro, Sépia e Escuro.">
+        <figcaption>Letra e tema</figcaption>
+      </figure></li>
+      <li><figure>
+        <img class="tela" src="imagens/05-compartilhar.webp" width="480" height="1067" loading="lazy" alt="Imagem com o versículo sobre uma foto de árvores, pronta para enviar no WhatsApp.">
+        <figcaption>Compartilhar</figcaption>
+      </figure></li>
+      <li><figure>
+        <img class="tela" src="imagens/06-busca.webp" width="480" height="1067" loading="lazy" alt="Busca pela palavra luz, com 304 versículos encontrados.">
+        <figcaption>Busca</figcaption>
+      </figure></li>
+      <li><figure>
+        <img class="tela" src="imagens/07-widget.webp" width="480" height="1067" loading="lazy" alt="Os dois widgets da palavra do dia na tela inicial do celular.">
+        <figcaption>Widget</figcaption>
+      </figure></li>
+    </ul>
+  </section>
+  <section aria-labelledby="t-privacidade">
+    <div class="destaque">
+      <h2 id="t-privacidade">Seus dados ficam com você</h2>
+      <p>Não precisa de cadastro nem de senha, e não tem anúncios. O que você salva e ajusta fica guardado no seu celular, e o Palavra não coleta nenhum dado seu.</p>
+      <p><a href="privacidade/">Leia a política de privacidade</a></p>
+    </div>
+  </section>
+  <section aria-labelledby="t-traducao">
+    <h2 id="t-traducao">Sobre a tradução</h2>
+    <p class="credito">Textos bíblicos da Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio e Marco Teles, licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br">Creative Commons Atribuição 4.0</a>. O app traz os 66 livros do Antigo e do Novo Testamento.</p>
+  </section>
+</main>
+<footer>
+  <div class="largura">
+    <p>O Palavra é um app da <a href="../">VemPro</a>.</p>
+    <p><a href="privacidade/">Política de privacidade</a> · Contato: <a href="mailto:jean.sassi.miranda@gmail.com">jean.sassi.miranda@gmail.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
