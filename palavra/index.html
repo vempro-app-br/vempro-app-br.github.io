@@ -47,6 +47,9 @@ a { color: var(--primaria); text-decoration-thickness: 2px; text-underline-offse
 .botao:hover, .botao:focus-visible { background: #1F3D73; }
 .miudo { margin: 1rem 0 0; color: #2E3D5A; font-size: 1.125rem; }
 .celular { margin: 0 auto; width: min(19rem, 80vw); }
+.video { margin: 0 auto; width: min(19rem, 80vw); }
+.video video { aspect-ratio: 9 / 16; }
+.video figcaption { margin-top: 1rem; text-align: center; color: var(--texto2); }
 
 .tela { display: block; width: 100%; height: auto; border: 6px solid var(--azul-noite); border-radius: 28px; background: var(--azul-noite); box-shadow: 0 18px 40px rgba(19, 35, 63, 0.28); }
 
@@ -97,6 +100,16 @@ footer p { margin: 0 0 0.5rem; }
   </div>
 </header>
 <main class="largura">
+  <section aria-labelledby="t-video">
+    <h2 id="t-video">Veja o Palavra em 1 minuto</h2>
+    <figure class="video">
+      <video class="tela" controls playsinline preload="none" poster="video/palavra-1-minuto.webp" width="1080" height="1920" aria-describedby="d-video">
+        <source src="video/palavra-1-minuto.mp4" type="video/mp4">
+        <a href="video/palavra-1-minuto.mp4">Assistir ao vídeo</a>
+      </video>
+      <figcaption id="d-video">A palavra do dia com a reflexão, o lembrete e o widget, a Bíblia completa sem internet, a busca, a leitura em voz alta, a letra grande e o versículo compartilhado com a família.</figcaption>
+    </figure>
+  </section>
   <section aria-labelledby="t-recursos">
     <h2 id="t-recursos">O que o Palavra faz</h2>
     <ul class="cartoes">
